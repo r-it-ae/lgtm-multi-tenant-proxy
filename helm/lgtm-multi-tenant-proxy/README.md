@@ -21,11 +21,12 @@ Helm chart for Grafana Multi Tenant Proxy
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | configReloader.containerSecurityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"readOnlyRootFilesystem":true,"seccompProfile":{"type":"RuntimeDefault"}}` | Security context to apply to the config reloader containers. |
+| configReloader.image.registry | string | `"docker.io"` | Registry to get config reloader image from. Overrides global.image.registry. |
 | configReloader.image.repository | string | `"giantswarm/configmap-reload"` | Repository to get config reloader image from. |
 | configReloader.image.tag | string | `"v0.13.1"` | Tag of image to use for config reloading. |
 | configReloader.resources | object | `{"requests":{"cpu":"1m","memory":"5Mi"}}` | Resource requests and limits to apply to the config reloader containers. |
 | fullnameOverride | string | `nil` | Overrides the chart's computed fullname |
-| global.image.registry | string | `"gsoci.azurecr.io"` | Overrides the Docker registry globally for all images |
+| global.image.registry | string | `"ghcr.io"` | Overrides the Docker registry globally for all images |
 | ingress.annotations | object | `{}` | Annotations for the gateway ingress |
 | ingress.enabled | bool | `false` | Specifies whether an ingress for the multi-tenant-proxy should be created |
 | ingress.hosts | list | `[{"host":"multi-tenant-proxy.loki.example.com","paths":[{"path":"/"}]}]` | Hosts configuration for the multi-tenant-proxy ingress, passed through the `tpl` function to allow templating |
@@ -47,7 +48,7 @@ Helm chart for Grafana Multi Tenant Proxy
 | proxy.credentials | string | `"users:\n  - username: Tenant1\n    password: 1tnaneT\n    orgid: tenant-1\n  - username: Tenant2\n    password: 2tnaneT\n    orgid: tenant-2"` | The credentials for the multi-tenant-proxy |
 | proxy.deployCredentials | bool | `false` |  |
 | proxy.image.pullPolicy | string | `"IfNotPresent"` | Overrides the image pull policy whose default is 'IfNotPresent' |
-| proxy.image.repository | string | `"giantswarm/grafana-multi-tenant-proxy"` | Repository to get multi-tenant proxy image from. |
+| proxy.image.repository | string | `"ronan-wescale/lgtm-multi-tenant-proxy"` | Repository to get multi-tenant proxy image from. |
 | proxy.image.tag | string | `nil` | Overrides the image tag whose default is the chart's appVersion |
 | proxy.replicas | int | `3` | Number of replicas for the multi-tenant proxy |
 | proxy.resources | object | `{"limits":{"memory":"500Mi"},"requests":{"cpu":"50m","memory":"50Mi"}}` | Resource requests and limits |

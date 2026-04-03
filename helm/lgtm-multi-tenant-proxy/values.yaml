@@ -8,7 +8,7 @@ enabled: true
 global:
   image:
     # -- Overrides the Docker registry globally for all images
-    registry: "docker.io"
+    registry: "ghcr.io"
 
 proxy:
   # -- Number of replicas for the multi-tenant proxy
@@ -28,7 +28,7 @@ proxy:
 
   image:
     # -- Repository to get multi-tenant proxy image from.
-    repository: tcheksa62/lgtm-multi-tenant-proxy
+    repository: ronan-wescale/lgtm-multi-tenant-proxy
     # -- Overrides the image tag whose default is the chart's appVersion
     tag: ""
     # -- Overrides the image pull policy whose default is 'IfNotPresent'
@@ -89,6 +89,8 @@ proxy:
 
 configReloader:
   image:
+    # -- Registry to get config reloader image from. Overrides global.image.registry.
+    registry: "docker.io"
     # -- Repository to get config reloader image from.
     repository: giantswarm/configmap-reload
     # -- Tag of image to use for config reloading.
