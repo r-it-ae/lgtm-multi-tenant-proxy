@@ -54,6 +54,8 @@ func initLogger(logLevel string) (*zap.Logger, error) {
 		return nil, err
 	}
 	zapConfig.Level = level
+	zapConfig.OutputPaths = []string{"stdout"}
+	zapConfig.ErrorOutputPaths = []string{"stdout"}
 	return zapConfig.Build()
 }
 
