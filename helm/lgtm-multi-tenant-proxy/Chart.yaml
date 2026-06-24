@@ -3,8 +3,8 @@ apiVersion: v2
 name: lgtm-multi-tenant-proxy
 description: Helm chart for Grafana Multi Tenant Proxy
 type: application
-appVersion: v0.9.4
-version: 0.9.12
+appVersion: v0.9.5
+version: 0.9.13
 home: https://github.com/r-it-ae/lgtm-multi-tenant-proxy
 sources:
   - https://github.com/r-it-ae/lgtm-multi-tenant-proxy

@@ -132,10 +132,10 @@ func Serve(c *cli.Context) error {
 		ErrorLog:          errorLogger,
 		ReadHeaderTimeout: 60 * time.Second,
 	}
+	logger.Info("Starting HTTP server", zap.String("addr", addr))
 	if err := server.ListenAndServe(); err != nil {
 		return cli.Exit(fmt.Sprintf("Grafana multi tenant proxy could not start %v", err), -1)
 	}
-	logger.Info("Starting HTTP server", zap.String("addr", addr))
 	return nil
 }
 
