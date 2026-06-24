@@ -28,7 +28,7 @@ proxy:
 
   image:
     # -- Repository to get multi-tenant proxy image from.
-    repository: ghcr.io/r-it-ae/lgtm-multi-tenant-proxy
+    repository: r-it-ae/lgtm-multi-tenant-proxy
     # -- Overrides the image tag whose default is the chart's appVersion
     tag: ""
     # -- Overrides the image pull policy whose default is 'IfNotPresent'
