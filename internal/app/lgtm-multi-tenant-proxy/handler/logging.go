@@ -72,7 +72,7 @@ func Logger(handler http.HandlerFunc, logger *zap.Logger) http.HandlerFunc {
 			case lrw.statusCode >= 300:
 				logger.Info("Redirection", fields...)
 			default:
-				logger.Info("Success", fields...)
+				logger.Debug("Success", fields...)
 			}
 		}(time.Now())
 		handler(lrw, r)
