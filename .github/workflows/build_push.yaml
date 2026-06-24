@@ -42,4 +42,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ghcr.io/ronan-wescale/lgtm-multi-tenant-proxy:${{ steps.get_version.outputs.VERSION }}
+            ghcr.io/r-it-ae/lgtm-multi-tenant-proxy:${{ steps.get_version.outputs.VERSION }}
