@@ -28,7 +28,7 @@ spec:
             - "run"
             - "--auth-config=/etc/proxy/authn.yaml"
             - "--proxy-config=/etc/proxy/config.yaml"
-            - "--log-level=WARN"
+            - "--log-level={{ .Values.proxy.logLevel }}"
             - "--port={{ .Values.proxy.containerPort }}"
           {{- with .Values.proxy.env }}
           env:

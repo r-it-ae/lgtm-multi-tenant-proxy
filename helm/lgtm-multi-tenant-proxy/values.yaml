@@ -87,6 +87,9 @@ proxy:
   # -- Default container port
   containerPort: 3501
 
+  # -- Log level (DEBUG, INFO, WARN, ERROR, PANIC, FATAL)
+  logLevel: INFO
+
 configReloader:
   image:
     # -- Registry to get config reloader image from. Overrides global.image.registry.
